@@ -15,6 +15,10 @@ end)
 if CLIENT then
 	Guidance.Description = "This guidance package will choose a contraption at random and guide the munition towards it."
 else
+	function Guidance:Configure(Missile)
+		self.ViewCone = 180
+		self.ViewConeCos = math.cos(math.rad(self.ViewCone))
+	end
 	function Guidance:UpdateTarget(Missile)
 		if not IsValid(self.Target) then -- I might make this better later but this is a shitpost anyway
 			local Ents = ents.FindByClass("acf_baseplate")
