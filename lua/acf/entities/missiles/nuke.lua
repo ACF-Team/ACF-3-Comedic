@@ -14,7 +14,7 @@ Missiles.RegisterItem("LITTLEBOY", "BOMB", {
 	Racks		= { ["1xRK"] = true },
 	Guidance	= { Dumb = true },
 	Navigation  = "Chase",
-	Fuzes		= { Contact = true, Optical = true},
+	Fuzes		= { Contact = true, Optical = true, Altitude = true},
 	Agility		= 1,
 	ArmDelay	= 3,
 	Blacklist	= { "AP", "APHE", "HE", "HEAT", "HP", "FL", "SM" },
