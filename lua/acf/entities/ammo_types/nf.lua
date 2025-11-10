@@ -61,7 +61,7 @@ function Ammo:BaseConvert(ToolData)
 
 	GUIData.MinFillerVol = 0
 
-	Data.ShovePower		= 0.1
+	Data.ShovePower		= 2555
 	Data.LimitVel		= 100 --Most efficient penetration speed in m/s
 	Data.Ricochet		= 60 --Base ricochet angle
 	Data.DetonatorAngle	= 80
@@ -109,6 +109,22 @@ if SERVER then
 	end
 else
 	ACF.RegisterAmmoDecal("NE", "damage/he_pen", "damage/he_rico")
+
+	function Ammo:ImpactEffect(_, Bullet)
+		Ammo.BaseClass.ImpactEffect(self, _, Bullet)
+
+		local Position  = Bullet.SimPos
+		local Direction = Bullet.SimFlight
+		local Radius = math.max(1, ACF.Damage.getBlastRadius(Bullet.FillerMass))
+
+		local EffectTable = {
+			Origin = Position,
+			Normal = Direction or Down,
+			Scale  = Radius,
+		}
+
+		ACF.Utilities.Effects.CreateEffect("ACF_Nuclear_Explosion", EffectTable)
+	end
 
 	function Ammo:OnCreateAmmoInformation(Base, ToolData, BulletData)
 		local RoundStats = Base:AddLabel()
