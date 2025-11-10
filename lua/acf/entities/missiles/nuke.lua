@@ -2,7 +2,7 @@ local Missiles = ACF.Classes.Missiles
 
 Missiles.RegisterItem("LITTLEBOY", "BOMB", {
 	Name		= "Little Boy Nuclear Weapon",
-	Description	= "oppenheimer",
+	Description	= "The worlds most expensive rice cooker, courtesy of the Los Alamos Laboratory",
 	Model		= "models/acf/comedic/littleboy.mdl",
 	Length		= 450,
 	Caliber		= 27700,
