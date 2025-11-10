@@ -3,14 +3,14 @@ local Missiles = ACF.Classes.Missiles
 Missiles.RegisterItem("LITTLEBOY", "BOMB", {
 	Name		= "Little Boy Nuclear Weapon",
 	Description	= "oppenheimer",
-	Model		= "models/bombs/an_m66.mdl",
+	Model		= "models/acf/comedic/littleboy.mdl",
 	Length		= 450,
 	Caliber		= 27700,
 	Mass		= 4400,
 	Year		= 1945,
 	Diameter	= 22 * ACF.InchToMm, -- in mm
 	ReloadTime	= 2,
-	Offset		= Vector(-10, 0, 0),
+	Offset		= Vector(42, 0, -3),
 	Racks		= { ["1xRK"] = true },
 	Guidance	= { Dumb = true },
 	Navigation  = "Chase",
@@ -18,7 +18,7 @@ Missiles.RegisterItem("LITTLEBOY", "BOMB", {
 	Agility		= 1,
 	ArmDelay	= 3,
 	Round = {
-		Model           = "models/bombs/an_m66.mdl",
+		Model           = "models/acf/comedic/littleboy.mdl",
 		MaxLength       = 4450,
 		Armor           = 5,
 		ProjLength      = 4450,
